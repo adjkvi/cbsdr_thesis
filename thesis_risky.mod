@@ -51,12 +51,12 @@ parameters
 	rhor;
 
 beta = 0.99;
-gamma = 0.125;
-alpha = 2.5;
+gamma = 0.2;
+alpha = 1.5;
 bs = 1;
 ts = bs*((1/beta)-1);
-rhodef = 0.8;
-rhor = 0.8;
+rhodef = 0.5;
+rhor = 0.5;
 
 
 
@@ -65,7 +65,7 @@ rhor = 0.8;
 % Values of phi to iterate over
 %%%%
 
-phis = [0, 0.2];
+phis = [0, 0.1];
 
 
 
@@ -132,7 +132,7 @@ for phi_idx = 1:length(phis)
     var ur = 0.1^2;
     end;
 
-    stoch_simul(order = 1,ar=0, irf = 30, nograph);
+    stoch_simul(order = 1,ar=0, irf = 50, nograph);
 
     pi_irfrd(:, phi_idx) = pi_udef; 
     r_irfrd(:, phi_idx) = r_udef;
